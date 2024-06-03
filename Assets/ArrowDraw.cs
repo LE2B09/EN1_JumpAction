@@ -23,7 +23,7 @@ public class ArrowDraw : MonoBehaviour
         {
             clickPosition = Input.mousePosition;
         }
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             Vector3 dist = clickPosition - Input.mousePosition;
             //ベクトルの長さを算出
