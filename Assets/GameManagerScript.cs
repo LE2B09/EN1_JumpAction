@@ -19,5 +19,9 @@ public class GameManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneName);
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

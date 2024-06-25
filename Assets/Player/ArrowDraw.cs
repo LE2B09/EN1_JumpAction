@@ -13,7 +13,8 @@ public class ArrowDraw : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // 初期状態で矢印画像を非表示にする
+        arrowImage.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,6 +23,8 @@ public class ArrowDraw : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             clickPosition = Input.mousePosition;
+            // マウスがクリックされたら矢印画像を表示する
+            arrowImage.enabled = true;
         }
         if (Input.GetMouseButton(0))
         {
@@ -36,6 +39,11 @@ public class ArrowDraw : MonoBehaviour
             arrowImage.rectTransform.rotation = Quaternion.Euler(0, 0, angleRad * Mathf.Rad2Deg);
             //矢印の画像の大きさをドラッグした距離に合わせる
             arrowImage.rectTransform.sizeDelta = new Vector2(size, size);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            // マウスボタンが離されたら矢印画像を非表示にする
+            arrowImage.enabled = false;
         }
     }
 }

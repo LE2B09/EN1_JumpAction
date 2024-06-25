@@ -24,8 +24,22 @@ public class ItemScript : MonoBehaviour
     {
         animator.SetTrigger("Get");
         audioSource.Play();
-        Debug.Log("アイテムを拾った");
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //接触している間（重なっているとき）に呼ばれる。
+        Debug.Log("Stay");
+        //DestroySelf();
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //離れた時に呼ばれる
+        Debug.Log("Exit");
+    }
+
     private void DestroySelf()
     {
         Destroy(gameObject);

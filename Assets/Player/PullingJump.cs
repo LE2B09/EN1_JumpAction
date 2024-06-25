@@ -36,7 +36,10 @@ public class PullingJump : MonoBehaviour
                 rb.velocity = dist.normalized * jumpPower;
                 isCanJump = false;
             }
-
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 
